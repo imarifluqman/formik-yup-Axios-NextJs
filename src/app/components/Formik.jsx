@@ -32,7 +32,7 @@ function Formik() {
             Name
           </label>
           <input
-            className="w-[350px] focus:outline-none"
+            className="w-[320px] focus:outline-none"
             type="text"
             placeholder="name"
             id="name"
@@ -50,7 +50,7 @@ function Formik() {
             Father Name
           </label>
           <input
-            className="w-[350px]  focus:outline-none"
+            className="w-[320px]  focus:outline-none"
             type="text"
             placeholder="Father Name"
             id="fatherName"
@@ -68,7 +68,7 @@ function Formik() {
             Email
           </label>
           <input
-            className="w-[350px] focus:outline-none"
+            className="w-[320px] focus:outline-none"
             type="email"
             placeholder="email"
             id="email"
@@ -86,7 +86,7 @@ function Formik() {
             Phone
           </label>
           <input
-            className="w-[350px]   focus:outline-none"
+            className="w-[320px]   focus:outline-none"
             type="text"
             placeholder="phone"
             id="phone"
@@ -105,7 +105,7 @@ function Formik() {
             Password
           </label>
           <input
-            className="w-[350px] focus:outline-none"
+            className="w-[320px] focus:outline-none"
             type="password"
             placeholder="password"
             id="password"
@@ -123,7 +123,7 @@ function Formik() {
             Conform Passpord
           </label>
           <input
-            className="w-[350px]  focus:outline-none"
+            className="w-[320px]  focus:outline-none"
             type="password"
             placeholder="confirm_password"
             id="confirm_password"
