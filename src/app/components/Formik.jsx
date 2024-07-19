@@ -1,6 +1,7 @@
 "use client";
 import { useFormik } from "formik";
 import { schema } from "./schemas";
+import { Axios } from "./axios/Axios";
 function Formik() {
   const { values, handleChange, handleSubmit, handleBlur, errors, touched } =
     useFormik({
@@ -14,8 +15,8 @@ function Formik() {
       },
       validationSchema: schema,
       onSubmit: (values, { resetForm }) => {
-        console.log(values);
         resetForm();
+        Axios(values);
       },
     });
 
@@ -31,7 +32,7 @@ function Formik() {
             Name
           </label>
           <input
-            className="w-[400px] focus:outline-none"
+            className="w-[350px] focus:outline-none"
             type="text"
             placeholder="name"
             id="name"
@@ -49,7 +50,7 @@ function Formik() {
             Father Name
           </label>
           <input
-            className="w-[400px]   focus:outline-none"
+            className="w-[350px]  focus:outline-none"
             type="text"
             placeholder="Father Name"
             id="fatherName"
@@ -67,7 +68,7 @@ function Formik() {
             Email
           </label>
           <input
-            className="w-[400px]  focus:outline-none"
+            className="w-[350px] focus:outline-none"
             type="email"
             placeholder="email"
             id="email"
@@ -85,7 +86,7 @@ function Formik() {
             Phone
           </label>
           <input
-            className="w-[400px]   focus:outline-none"
+            className="w-[350px]   focus:outline-none"
             type="text"
             placeholder="phone"
             id="phone"
@@ -104,7 +105,7 @@ function Formik() {
             Password
           </label>
           <input
-            className="w-[400px]  focus:outline-none"
+            className="w-[350px] focus:outline-none"
             type="password"
             placeholder="password"
             id="password"
@@ -122,7 +123,7 @@ function Formik() {
             Conform Passpord
           </label>
           <input
-            className="w-[400px]  focus:outline-none"
+            className="w-[350px]  focus:outline-none"
             type="password"
             placeholder="confirm_password"
             id="confirm_password"
@@ -138,7 +139,7 @@ function Formik() {
           ) : null}
         </div>
         <button
-          className="bg-blue-500 w-[400px] text-white p-2 text-center block mx-auto mt-5"
+          className="bg-blue-500 w-[320px] text-white p-2 text-center block mx-auto mt-5"
           type="submit"
         >
           Submit
