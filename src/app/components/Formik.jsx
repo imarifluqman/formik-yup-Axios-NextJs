@@ -3,22 +3,35 @@ import { useFormik } from "formik";
 import { schema } from "./schemas";
 import { Axios } from "./axios/Axios";
 function Formik() {
-  const { values, handleChange, handleSubmit, handleBlur, errors, touched } =
-    useFormik({
-      initialValues: {
-        name: "",
-        fatherName: "",
-        email: "",
-        phone: "",
-        password: "",
-        confirm_password: "",
-      },
-      validationSchema: schema,
-      onSubmit: (values, { resetForm }) => {
-        resetForm();
-        Axios(values);
-      },
-    });
+  const {
+    values,
+    handleChange,
+    handleSubmit,
+    handleBlur,
+    errors,
+    touched,
+    setFieldValue,
+  } = useFormik({
+    initialValues: {
+      name: "",
+      fatherName: "",
+      email: "",
+      phone: "",
+      file: "",
+      password: "",
+      confirm_password: "",
+    },
+    validationSchema: schema,
+    onSubmit: (values, { resetForm }) => {
+      resetForm();
+      Axios(values);
+    },
+  });
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setFieldValue("file",file);
+  };
 
   return (
     <div className="w-full">
@@ -97,6 +110,24 @@ function Formik() {
           />
           {errors.phone && touched.phone ? (
             <small className="text-red-500 block">{errors.phone}</small>
+          ) : null}
+        </div>
+
+        <div className="border rounded p-2 mt-2">
+          <label className="block" htmlFor="file">
+            Upload Your Picture here
+          </label>
+          <input
+            className="w-[320px] focus:outline-none"
+            type="file"
+            placeholder="Upload Your Picture here"
+            id="file"
+            name="file"
+            onChange={handleFileChange}
+            onBlur={handleBlur}
+          />
+          {errors.file && touched.file ? (
+            <small className="text-red-500 block">{errors.file}</small>
           ) : null}
         </div>
 

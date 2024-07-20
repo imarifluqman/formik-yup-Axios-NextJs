@@ -1,10 +1,11 @@
 import * as yup from "yup";
 
-export const schema = yup.object().shape({
+export const schema = yup.object({
   name: yup.string().min(3).required(),
   email: yup.string().email().required(),
   phone: yup.string().required(),
   fatherName: yup.string().min(3).required(),
+  file: yup.mixed().required(),
   password: yup
     .string()
     .required()
